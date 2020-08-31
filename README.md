@@ -2,4 +2,4 @@
 Web Programming Fall 2020
 
 ## Third Day
-We are learning about git
+We are learning about git and github

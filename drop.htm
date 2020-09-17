@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body {
+  background-color: lightgreen;
+}
+
+.dropbtn {
+  background-color: lightblue;
+  color: black;
+  padding: 30px;
+  font-size: 20px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: orange;
+  min-width: 100px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px 10px;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: white;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: blue;}
+</style>
+</head>
+<body>
+
+<h1>This is my attempt at a menu system</h1>
+
+<div class="dropdown">
+  <button class="dropbtn">Home</button>
+  <div class="dropdown-content">
+    <a href="#">1</a>
+    <a href="#">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+  </div>
+</div>
+
+<div class="dropdown">
+  <button class="dropbtn">Locations</button>
+  <div class="dropdown-content">
+    <a href="#">New Paltz</a>
+    <a href="#">Newburgh</a>
+    <a href="#">Poughkeepsie</a>
+  </div>
+</div>
+
+<div class="dropdown">
+  <button class="dropbtn">Contact Us</button>
+  <div class="dropdown-content">
+    <a href="#">Email</a>
+    <a href="#">Phone</a>
+    <a href="#">In-Person</a>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,5 +1,5 @@
 <template>
-
+<form>
 <nav class="navbar container is-fixed-top is-info" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="https://bulma.io">
@@ -42,32 +42,33 @@
 
     <div class="navbar-end">
       <div class="navbar-item">
-        <div class="buttons">
-          <a class="button">
-            <strong>Sign up</strong>
-          </a>
-            <router-link to="/login" class="button is-light">Login</router-link>   
-        </div>
+        <LoginBadge />
       </div>
     </div>
   </div>
 </nav>
-
+</form>
 
 
 </template>
 
 <script>
+import LoginBadge from "@/components/LoginBadge";
 export default {
   data: ()=> ({
       isActive: false
   }),
   methods: {
 
+  },
+  components: {
+    LoginBadge
   }
 }
 </script>
 
 <style>
-
+  form{
+    margin-bottom: 30px;
+  }
 </style>

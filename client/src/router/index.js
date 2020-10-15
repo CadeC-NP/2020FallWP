@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Feed from '../views/Feed.vue'
+import session from '../models/session'
 
 Vue.use(VueRouter)
 
@@ -21,10 +22,8 @@ const routes = [
   {
     path: '/feed',
     name: 'Feed',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "feed" */ '../views/Feed.vue')
+    component: () => import(/* webpackChunkName: "feed" */ '../views/Feed.vue'),
+    beforeEnter: checkSessionUser
   },
 ]
 
@@ -35,3 +34,12 @@ const router = new VueRouter({
 })
 
 export default router
+
+
+function checkSessionUser (to, from, next){
+  if(session.user){
+    next();
+  }else{
+    next('Login');
+  }
+}

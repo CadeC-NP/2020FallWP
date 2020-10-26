@@ -3,20 +3,23 @@ const users = require('../models/users');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    throw { status: 501, message: "This is a test error"}
-    res.send(users.getAll())
+router.get('/', (req, res, next) => {
+    
+    users.getAll().then(x=> res.send( x ))
+    .catch(next);
+    console.log("finished get users")
   })
 
-  .get('/search', (req, res) => {
-    res.send(users.search(req.query.q))
+  .get('/search', (req, res, next) => {
+    res.send(users.search(req.query.q).then.res.send( x ))
+    .catch(next);
   })
 
-  .post('/',  (req, res) => {
+  .post('/',  (req, res, next) => {
     
-    const newUser = users.add(req.query.name, req.query.age );
-    
-    res.send( newUser );
+    users.add(req.query.name, req.query.age ).then(newUser => {
+      res.send( newUser );
+    }).catch(next);
   })
 
 module.exports = router;

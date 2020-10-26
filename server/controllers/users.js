@@ -4,6 +4,7 @@ const users = require('../models/users');
 const router = express.Router();
 
 router.get('/', (req, res) => {
+    throw { status: 501, message: "This is a test error"}
     res.send(users.getAll())
   })
 

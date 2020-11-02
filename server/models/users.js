@@ -12,4 +12,8 @@ async function add(name, age){
     data.push({name, age});
 }
 
-module.exports = { getAll, add, search: async q => data.filter(x=> x.name == q) }
+function rand() {
+    return Math.random();
+}
+
+module.exports = { rand, getAll, add, search: async q => data.filter(x=> x.name == q) }

@@ -16,10 +16,14 @@ router.get('/', (req, res, next) => {
   })
 
   .post('/',  (req, res, next) => {
-    
     users.add(req.query.name, req.query.age ).then(newUser => {
       res.send( newUser );
     }).catch(next);
+  })
+
+  .get('/rand', (req, res, next)=> {
+    const someVal = users.rand();
+    res.send({someVal});
   })
 
 module.exports = router;
